@@ -72,8 +72,19 @@ namespace MELCORUncertaintySupportPart1.Service
                         }
                         else if (lineVal.Contains(targetPRSTStr))
                         {
-                            fileName = prstStr + "_" + fileName + rstExtension;
-                            lineVal = lineVal.Replace(targetPRSTStr, fileName);
+                            /*
+                             * 이 프로그램으로 돌린 .dat 파일을
+                             * 여러 번 돌리면 PRST에서
+                             * PRST_CaseN.rst_CaseN.rst_CaseN.rst
+                             * 와 같은 현상이 발생한다.
+                             * 이를 방지하기 위한 방안으로
+                             * .rst 확장자 존재 유무로 처리했다.
+                             */
+                            if (!lineVal.Contains(".rst"))
+                            {
+                                fileName = prstStr + "_" + fileName + rstExtension;
+                                lineVal = lineVal.Replace(targetPRSTStr, fileName);
+                            }
                         }
                         else if (lineVal.Contains(targetPCDIAStr))
                         {
