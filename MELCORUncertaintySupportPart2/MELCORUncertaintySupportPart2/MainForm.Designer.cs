@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msiOpenFiles = new System.Windows.Forms.ToolStripMenuItem();
+            this.buildBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msiMakeHISFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.dockPnlMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.vS2015DarkTheme1 = new WeifenLuo.WinFormsUI.Docking.VS2015DarkTheme();
-            this.buildBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.msiMakeHISFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,9 +62,24 @@
             // msiOpenFiles
             // 
             this.msiOpenFiles.Name = "msiOpenFiles";
-            this.msiOpenFiles.Size = new System.Drawing.Size(180, 22);
+            this.msiOpenFiles.Size = new System.Drawing.Size(142, 22);
             this.msiOpenFiles.Text = "Open File(&O)";
             this.msiOpenFiles.Click += new System.EventHandler(this.MsiOpenFiles_Click);
+            // 
+            // buildBToolStripMenuItem
+            // 
+            this.buildBToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msiMakeHISFiles});
+            this.buildBToolStripMenuItem.Name = "buildBToolStripMenuItem";
+            this.buildBToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.buildBToolStripMenuItem.Text = "Build(&B)";
+            // 
+            // msiMakeHISFiles
+            // 
+            this.msiMakeHISFiles.Name = "msiMakeHISFiles";
+            this.msiMakeHISFiles.Size = new System.Drawing.Size(147, 22);
+            this.msiMakeHISFiles.Text = "Make his files";
+            this.msiMakeHISFiles.Click += new System.EventHandler(this.MsiMakeHISFiles_Click);
             // 
             // statusStrip1
             // 
@@ -85,21 +101,6 @@
             this.dockPnlMain.TabIndex = 2;
             this.dockPnlMain.Theme = this.vS2015DarkTheme1;
             // 
-            // buildBToolStripMenuItem
-            // 
-            this.buildBToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.msiMakeHISFiles});
-            this.buildBToolStripMenuItem.Name = "buildBToolStripMenuItem";
-            this.buildBToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.buildBToolStripMenuItem.Text = "Build(&B)";
-            // 
-            // msiMakeHISFiles
-            // 
-            this.msiMakeHISFiles.Name = "msiMakeHISFiles";
-            this.msiMakeHISFiles.Size = new System.Drawing.Size(180, 22);
-            this.msiMakeHISFiles.Text = "Make his files";
-            this.msiMakeHISFiles.Click += new System.EventHandler(this.MsiMakeHISFiles_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -108,6 +109,7 @@
             this.Controls.Add(this.dockPnlMain);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
